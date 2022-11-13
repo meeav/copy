@@ -1,6 +1,14 @@
 name: Deploy RG
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: workflow_dispatch:
+    inputs:
+      location:
+        description: "Location"
+        type: choice
+        required: true
+        options:
+          - 'weu'
+          - 'frc'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
