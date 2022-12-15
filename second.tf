@@ -1,6 +1,6 @@
 resource "azurerm_automation_account" "automation" {
   name                          = "aa1"
-  location                      = 
+  location                      = "get"
   resource_group_name           = 
   sku_name                      = 
   tags                          = 
