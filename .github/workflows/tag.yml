@@ -24,4 +24,4 @@ jobs:
         id: apply-tags
         shell: pwsh
         run: |
-          ./powershell/tag.ps1
+          ./tag.ps1
