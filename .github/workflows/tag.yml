@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - copy/**
+      - .github/workflows/**
+  workflow_dispatch:
+
+
+
+name: Add tags
+
+jobs:
+  apply-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Apply tags
+        id: apply-tags
+        shell: pwsh
+        run: |
+          ./powershell/tag.ps1
