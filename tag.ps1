@@ -2,8 +2,7 @@ Write-Host "testing tag"
 
 Function TagSemantic ($tagPrefix) {
     $currentTags ="testtag_v0.0.1"
-  
-    Write-Host $currentTags
+    Write-Host "inside fnc $currentTags"
     if ($currentTags.Count -eq 0) {
         $tag = "$($tagPrefix)_v0.0.1"
     }
