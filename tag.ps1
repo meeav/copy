@@ -1,7 +1,7 @@
 Write-Host "testing tag"
 
 Function TagSemantic ($tagPrefix) {
-    $currentTags =git describe --tags --abbrev=0
+    $currentTags ="testtag_v0.0.1"
   
     Write-Host $currentTags
     if ($currentTags.Count -eq 0) {
@@ -32,5 +32,5 @@ $lastTag = "v0.0.1"
 Write-Host "Last tag is $lastTag"
 $changedFiles = @(git diff --name-only $lastTag HEAD)
 Write-Host $changedFiles
-TagSemantic('testtag_')
+TagSemantic('testtag')
 git push --follow-tags
