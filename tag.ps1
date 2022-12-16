@@ -24,3 +24,4 @@ Function TagSemantic ($tagPrefix) {
     Write-Host "Applying semantic tag $tag"
     git tag $tag -m "auto-generated tag"
 }
+git push --follow-tags
