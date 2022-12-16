@@ -30,7 +30,7 @@ git config user.name "GitHub Actions Automatic Tagging"
 git config user.email "<>"
 $lastTag = "v0.0.1"
 Write-Host "Last tag is $lastTag"
-$changedFiles = @(git diff --name-only "$($lastTag)..HEAD")
+$changedFiles = @(git diff --name-only $lastTag HEAD)
 Write-Host $changedFiles
 TagSemantic('testtag_')
 git push --follow-tags
