@@ -1,3 +1,5 @@
+Write-Host "testing tag"
+
 function New-Tag {
     [CmdletBinding(SupportsShouldProcess=$true)]
     param(
