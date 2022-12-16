@@ -1,7 +1,7 @@
 Write-Host "testing tag"
 
 Function TagSemantic ($tagPrefix) {
-    $currentTags =$tagPrefix
+    $currentTags =git describe --tags --abbrev=0
   
     Write-Host $currentTags
     if ($currentTags.Count -eq 0) {
