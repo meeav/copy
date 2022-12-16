@@ -2,7 +2,7 @@ Write-Host "testing tag"
 
 Function TagSemantic ($tagPrefix) {
     $commitMessage = git show
-    $currentTags =git tag --list
+    $currentTags = git tag --list
     Write-Host "inside fnc $currentTags"
     Write-Host "inside func $currentTags"
     if ($currentTags.Count -eq 0) {
@@ -32,6 +32,6 @@ git config user.email "<>"
 $lastTag = git describe --tags --abbrev=0
 Write-Host "Last tag is $lastTag"
 $changedFiles = @(git diff --name-only $lastTag HEAD)
-Write-Host $changedFiles
+Write-Host "change $changedFiles"
 TagSemantic('testtag')
 git push --follow-tags
