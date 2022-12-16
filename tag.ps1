@@ -25,7 +25,7 @@ Function TagSemantic ($tagPrefix) {
 }
 git config user.name "GitHub Actions Automatic Tagging"
 git config user.email "<>"
-$lastTag = "v0.1.0"
+$lastTag = "v0.0.1"
 Write-Host "Last tag is $lastTag"
 $changedFiles = @(git diff --name-only "$($lastTag)..HEAD")
 Write-Host $changedFiles
