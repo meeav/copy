@@ -1,7 +1,6 @@
 Write-Host "testing tag"
 
 Function TagSemantic ($tagPrefix) {
-    $commitMessage = [System.String] (git show -s --format=%s (git rev-parse HEAD)).ToLower()
     $currentTags = @(git tag --list "$($tagPrefix)*")
     Write-Host $commitMessage
     Write-Host $currentTags
