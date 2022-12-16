@@ -24,8 +24,11 @@ Function TagSemantic ($tagPrefix) {
     Write-Host "Applying semantic tag $tag"
     git tag $tag -m "auto-generated tag"
 }
-$lastTag = git describe --tags --abbrev=0
+git config user.name "GitHub Actions Automatic Tagging"
+git config user.email "<>"
+$lastTag = "v0.1.0"
 Write-Host "Last tag is $lastTag"
 $changedFiles = @(git diff --name-only "$($lastTag)..HEAD")
+Write-Host $changedFiles
 TagSemantic('testtag_')
 git push --follow-tags
