@@ -16,8 +16,8 @@ jobs:
       
       - name: Apply tags
         id: apply-tags
-        if: github.ref == 'refs/heads/break'
+        
         shell: pwsh        
-        run: |
-          ./tag.ps1
+        run: ./tag.ps1
+        if: github.ref == 'refs/heads/break'
         
