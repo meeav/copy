@@ -1,6 +1,14 @@
+
+
 Write-Host "testing tag"
 
+[CmdletBinding()]
+param (
+    
+    [string] [Parameter(Mandatory = $true)] $tagPrefix )
+
 Function TagSemantic ($tagPrefix) {
+    [CmdletBinding()]
     $commitMessage = git show
     $currentTags = git tag --list
     Write-Host "inside fnc1 $currentTags"
@@ -33,5 +41,5 @@ $lastTag = git describe --tags --abbrev=0
 Write-Host "Last tag is $lastTag"
 $changedFiles = @(git diff --name-only $lastTag HEAD)
 Write-Host "change $changedFiles"
-TagSemantic('testtag')
+#TagSemantic('testtag')
 git push --follow-tags
