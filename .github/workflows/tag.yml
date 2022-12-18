@@ -16,7 +16,7 @@ jobs:
       
       - name: Apply tags
         id: apply-tags
-        if: github.ref == 'refs/heads/break'
+        if: contains(github.base_ref, 'break')
         shell: pwsh        
         run: |
           echo "running tag"
