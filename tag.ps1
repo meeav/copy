@@ -3,7 +3,7 @@ Write-Host "testing tag"
 Function TagSemantic ($tagPrefix) {
     $commitMessage = git show
     $currentTags = git tag --list
-    Write-Host "inside fnc $currentTags"
+    Write-Host "inside fnc1 $currentTags"
     Write-Host "inside func $currentTags"
     if ($currentTags.Count -eq 0) {
         $tag = "$($tagPrefix)_v0.0.1"
