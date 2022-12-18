@@ -1,6 +1,9 @@
+
+
 Write-Host "testing tag"
 
 Function TagSemantic ($tagPrefix) {
+    [CmdletBinding()]
     $commitMessage = git show
     $currentTags = git tag --list
     Write-Host "inside fnc1 $currentTags"

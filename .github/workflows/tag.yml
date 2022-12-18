@@ -16,8 +16,12 @@ jobs:
       
       - name: Apply tags
         id: apply-tags
-        
-        shell: pwsh        
-        run: ./tag.ps1
         if: github.ref == 'refs/heads/break'
+        shell: pwsh        
+        run: |
+          echo "running tag"
+          ./tag.ps1 `
+            - tagPrefix "break_"
+        
+        
         
