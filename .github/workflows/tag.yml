@@ -2,26 +2,34 @@ on:
   push:
     branches:
       - main
-      - break
-    
+      - develop
 
-name: Add tags
 
+
+name: Deploy Tag
 jobs:
   apply-tags:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: Apply tags
-        id: apply-tags
-        if: contains(github.base_ref, 'break')
-        shell: pwsh        
+        with:
+          fetch-depth: 0
+
+      - name: Apply tags to main
+        id: apply-tags-main
+        shell: pwsh
+        if: github.ref == 'refs/heads/main'     
         run: |
-          echo "running tag"
-          ./tag.ps1 `
-            - tagPrefix "break_"
-        
-        
+          echo "running version_tag_main"
+          ./Templates/powershell/tag.ps1 `
+            -tagPrefix "release"
+      - name: Apply tags to develop
+        id: apply-tags-develop
+        shell: pwsh
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          echo "running version_tag_develop"
+          ./Templates/powershell/tag.ps1 `
+            -tagPrefix "develop"
         
