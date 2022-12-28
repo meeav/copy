@@ -16,6 +16,6 @@ jobs:
         - name: checkout
           run: echo "git checkout ${{ github.ref }} "
         - name : repo
-          uses: action/checkout@v3
+          uses: actions/checkout@v3
         - run : echo "${{ github.event_name }}, ${{ github.workspace}}, ${{ github.repository }}"
           
