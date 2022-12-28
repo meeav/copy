@@ -1,0 +1,21 @@
+name: test
+on: 
+  workflow_dispatch:
+    inputs:
+      location:
+        description: "Location (weu / frc)"
+        type: choice
+        required: true
+        options:
+          - 'weu'
+          - 'frc'
+jobs:
+  test1:
+    runs-on: ubuntu-latest
+    steps: 
+        - name: checkout
+          run: echo "git checkout ${{ github.ref }} "
+        - name : repo
+          uses: action/checkout@v3
+        - run : echo "${{ github.event_name }}, ${{ github.workspace}}, ${{ github.repository }}"
+          
