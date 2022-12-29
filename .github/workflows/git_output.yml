@@ -1,5 +1,6 @@
 name: Generate random failure
-on: push
+on: 
+  workflow_dispatch :
 jobs:
   randomly-failing-job:
     runs-on: ubuntu-latest
