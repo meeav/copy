@@ -22,7 +22,7 @@ jobs:
         if: github.ref == 'refs/heads/main'     
         run: |
           echo "running version_tag_main"
-          ./Templates/powershell/tag.ps1 `
+          ./tag.ps1 `
             -tagPrefix "release"
       - name: Apply tags to develop
         id: apply-tags-develop
@@ -30,6 +30,6 @@ jobs:
         if: github.ref == 'refs/heads/develop'
         run: |
           echo "running version_tag_develop"
-          ./Templates/powershell/tag.ps1 `
+          ./tag.ps1 `
             -tagPrefix "develop"
         
