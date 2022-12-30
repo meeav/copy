@@ -1,4 +1,4 @@
-name: apply tags
+
 on:
   push:
     branches:
