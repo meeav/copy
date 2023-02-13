@@ -1,6 +1,6 @@
 
 
-Write-Host "testing tag"
+Write-Host "testing tag1"
 
 Function TagSemantic ($tagPrefix) {
     [CmdletBinding()]
