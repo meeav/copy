@@ -3,14 +3,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  ref:
+  refer:
     runs-on: ubuntu-latest
     steps:      
-     - name: Branch name
+      - name: Branch name
         run: |
           echo "BRANCH_TAG=$(echo $GITHUB_REF_NAME )" >> $GITHUB_ENV `
           echo "BRANCH_NAME=$(echo $GITHUB_REF )" >> $GITHUB_ENV
-      - name: Branch-name-show
+          
+      - name: Branchshow
         run: |
           echo ${{ env.BRANCH_TAG }} `
           echo ${{ env.BRANCH_NAME }}
