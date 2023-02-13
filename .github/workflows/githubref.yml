@@ -1,4 +1,12 @@
-      - name: Branch name
+name: Githubref
+on: 
+  workflow_dispatch:
+
+jobs:
+  ref:
+    runs-on: ubuntu-latest
+    steps:      
+     - name: Branch name
         run: |
           echo "BRANCH_TAG=$(echo $GITHUB_REF_NAME )" >> $GITHUB_ENV `
           echo "BRANCH_NAME=$(echo $GITHUB_REF )" >> $GITHUB_ENV
