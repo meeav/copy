@@ -6,11 +6,18 @@ jobs:
   refer:
     runs-on: ubuntu-latest
     steps:      
-      - name: Branch name
+      - name: Branch or tag name
         run: |
           echo "BRANCH_TAG=$(echo $GITHUB_REF_NAME )" >> $GITHUB_ENV 
           
       - name: Branchshow
         run: |
-          echo ${{ env.BRANCH_TAG }} 
+          echo ${{ env.BRANCH_TAG }}
+          
+      - name: tag name
+
+        run: echo "TAG=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+      - name: Branchshow
+        run: |
+          echo ${{ env.TAG }}
 
