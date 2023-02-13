@@ -6,16 +6,16 @@ Function TagSemantic ($tagPrefix) {
     [CmdletBinding()]
     $commitMessage = git show
     $currentTags = git tag --list
-    Write-Host "inside fnc1 $currentTags"
-    Write-Host "inside func $currentTags"
+    Write-Host "commit message = $commitMessage"
+    Write-Host "current tag = $currentTags"
     if ($currentTags.Count -eq 0) {
         $tag = "$($tagPrefix)_v0.0.1"
     }
     else {
         $currentVersions = $currentTags | ForEach-Object { [System.Version]$_.Split('_v')[1] } | Sort-Object -Descending
-        Write-Host $currentVersions
+        Write-Host "versions $currentVersions"
         $lastVersion = $currentVersions[0]
-        Write-Host "else $lastVersion"
+        Write-Host "lastversion $lastVersion"
     
         if ($commitMessage.Contains("major")) {
             $tag = "$($tagPrefix)_v$($lastVersion.Major+1).0.0"
