@@ -16,7 +16,7 @@ jobs:
           
       - name: tag name
 
-        run: echo "TAG=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+        run: echo "TAG=$(echo $GITHUB_REF | cut -d'/' -f 4)" >> $GITHUB_ENV
       - name: Branchshow
         run: |
           echo ${{ env.TAG }}
