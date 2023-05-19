@@ -13,5 +13,8 @@ jobs:
         run: echo Hello from Octo Organization
 
 
-      
+      - name: Hello world action
+
+         run:echo run  name "${{ secrets.name }}"
+
 
