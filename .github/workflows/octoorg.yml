@@ -12,10 +12,6 @@ jobs:
       - name: Run a one-line script
         run: echo Hello from Octo Organization
 
-      - name: Hello world action
-        with: # Set the secret as an input
-          super_secret: ${{ secrets.name }}
-        env: # Or as an environment variable
-          super_secret: ${{ secrets.name }}
+
       
 
