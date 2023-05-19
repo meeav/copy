@@ -14,7 +14,10 @@ jobs:
 
 
       - name: Hello world action
+        with: 
+          name: ${{ secrets.name }}
+          
 
-         run:echo run  name "${{ secrets.name }}"
+       
 
 
