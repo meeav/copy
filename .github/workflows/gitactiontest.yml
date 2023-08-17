@@ -15,4 +15,8 @@ jobs:
         run: echo "$Greeting ${{env.First_Name}}. Today is $DAY_OF_WEEK!"
         env:
           First_Name: Mona
+      - name: "Say Hello Mona it's Tuesday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Meenu
 
