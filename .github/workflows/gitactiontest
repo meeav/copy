@@ -1,0 +1,14 @@
+name: Check all English links
+on:
+  workflow_dispatch:
+
+
+jobs:
+  bash-example:
+    runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
+    steps:
+      - name: bash-version
+        run: echo "::add-mask::$MY_NAME"
+
