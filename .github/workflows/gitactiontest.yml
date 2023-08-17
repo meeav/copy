@@ -24,5 +24,5 @@ jobs:
     job2:
       runs-on: ubuntu-latest
       steps:
-          - name: "name please"
-            run: echo "Today is $DAY_OF_WEEK!"
+        - name: "name please"
+          run: echo "Today is $DAY_OF_WEEK!"
