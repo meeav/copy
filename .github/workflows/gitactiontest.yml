@@ -20,9 +20,9 @@ jobs:
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
           First_Name: Meenu
-jobs:
-  job2:
-    runs-on: ubuntu-latest
+  jobs:
+    job2:
+      runs-on: ubuntu-latest
       steps:
-        - name: "name please"
-          run: echo "Today is $DAY_OF_WEEK!"
+          - name: "name please"
+            run: echo "Today is $DAY_OF_WEEK!"
